@@ -3,7 +3,7 @@
     <NavigationHeaderAuthCart />
     <NavigationHeaderPrimary />
     <NavigationHeaderSecondary />
-    <div class="max-w-screen-xl mx-auto flex-1">
+    <div class="max-w-screen-xl w-full mx-auto flex-1">
       <slot />
     </div>
     <NavigationFooter />
