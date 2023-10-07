@@ -1,28 +1,42 @@
 <template>
   <nav class="bg-secondary border-b border-primary">
-    <div class="max-w-screen-xl flex items-center justify-between mx-auto">
-      <NuxtLink class="hover:bg-primary py-5 px-3 cursor-pointer" to="/fabric"
-        >Fabric
-      </NuxtLink>
-      <NuxtLink
-        class="hover:bg-primary py-5 px-3 cursor-pointer"
-        to="/wallpaper"
-        >Wallpaper
-      </NuxtLink>
-      <NuxtLink
-        class="hover:bg-primary py-5 px-3 cursor-pointer"
-        to="/living-decor"
-        >Living & Decor
-      </NuxtLink>
-      <NuxtLink class="hover:bg-primary py-5 px-3 cursor-pointer" to="/dining"
-        >Dining
-      </NuxtLink>
-      <NuxtLink class="hover:bg-primary py-5 px-3 cursor-pointer" to="/bedding"
-        >Bedding
-      </NuxtLink>
-      <NuxtLink class="hover:bg-primary py-5 px-3 cursor-pointer" to="/help"
-        >Help
-      </NuxtLink>
+    <div class="max-w-screen-xl flex items-center justify-between py-5 mx-auto">
+      <div class="leading-5">
+        <NuxtLink class="hover:bg-primary py-5 px-3 cursor-pointer" to="/fabric"
+          >Fabric
+        </NuxtLink>
+      </div>
+      <div class="leading-5">
+        <NuxtLink
+          class="hover:bg-primary py-5 px-3 cursor-pointer"
+          to="/wallpaper"
+          >Wallpaper
+        </NuxtLink>
+      </div>
+      <div class="leading-5">
+        <NuxtLink
+          class="hover:bg-primary py-5 px-3 cursor-pointer"
+          to="/living-decor"
+          >Living & Decor
+        </NuxtLink>
+      </div>
+      <div class="leading-5">
+        <NuxtLink class="hover:bg-primary py-5 px-3 cursor-pointer" to="/dining"
+          >Dining
+        </NuxtLink>
+      </div>
+      <div class="leading-5">
+        <NuxtLink
+          class="hover:bg-primary py-5 px-3 cursor-pointer"
+          to="/bedding"
+          >Bedding
+        </NuxtLink>
+      </div>
+      <div class="leading-5">
+        <NuxtLink class="hover:bg-primary py-5 px-3 cursor-pointer" to="/help"
+          >Help
+        </NuxtLink>
+      </div>
     </div>
   </nav>
 </template>
