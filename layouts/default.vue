@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col h-screen bg-[#e6faf7]">
+  <div class="flex flex-col h-screen bg-background">
     <NavigationHeaderAuthCart />
     <NavigationHeaderPrimary />
     <NavigationHeaderSecondary />

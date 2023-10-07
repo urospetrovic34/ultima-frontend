@@ -9,11 +9,11 @@ export default {
   ],
   theme: {
     colors: {
-      primary: "#88e7da",
-      secondary: "#d0f5f1",
-      accent: "#2acfb9",
-      content: "#020808",
-      background: "#e6faf7",
+      primary: "#73DF62",
+      secondary: "#C4F3D5",
+      accent: "#28C361",
+      content: "#030401",
+      background: "#FFFFFF",
       white: "#ffffff",
     },
     extend: {},
