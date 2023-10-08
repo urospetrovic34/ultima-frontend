@@ -4,7 +4,7 @@
       <div>
         <NuxtLink
           to="/"
-          class="text-2xl font-bold text-content whitespace-nowrap"
+          class="text-3xl font-bold text-content whitespace-nowrap"
         >
           Ultima
         </NuxtLink>
