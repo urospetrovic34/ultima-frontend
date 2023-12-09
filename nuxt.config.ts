@@ -6,6 +6,9 @@ export default defineNuxtConfig({
       API_URL: process.env.API_URL,
     },
   },
+  routeRules: {
+    "/": { swr: 3600 },
+  },
   css: ["~/assets/css/main.scss"],
   postcss: {
     plugins: {

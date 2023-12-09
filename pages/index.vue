@@ -39,6 +39,7 @@ const { data: products, status } = await useFetch<Array<ProductReponse>>(
       Authorization: `Bearer ${config.public.API_KEY}`,
       apiKey: config.public.API_KEY,
     },
+    key: "products",
   }
 );
 </script>
