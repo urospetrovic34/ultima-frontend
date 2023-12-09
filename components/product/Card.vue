@@ -8,6 +8,7 @@
           fit="cover"
           height="300"
           width="300"
+          sizes="100vw sm:50vw md:300px"
           class="object-cover h-[300px] hover:scale-105 transition-[transform] duration-500"
         />
       </div>
