@@ -7,7 +7,8 @@
           format="webp"
           width="300"
           height="300"
-          sizes="100vw sm:50vw md:100px"
+          sizes="sm:150px, md:300px" 
+          densities="1x 2x"
           className="hover:scale-105 transition-[transform] duration-500"
         />
       </div>
