@@ -1,16 +1,16 @@
 <template>
-  <div className="flex flex-col cursor-pointer w-[300px]">
+  <div class="flex flex-col cursor-pointer w-[300px]">
     <NuxtLink :to="url">
       <div class="overflow-hidden">
         <NuxtImg
           :src="image"
           format="webp"
           fit="cover"
-          className="object-cover h-[300px] hover:scale-105 transition-[transform] duration-500"
+          class="object-cover h-[300px] hover:scale-105 transition-[transform] duration-500"
         />
       </div>
-      <div className="bg-primary p-4">
-        <p className="capitalize text-lg">{{ category }}</p>
+      <div class="bg-primary p-4">
+        <p class="capitalize text-lg">{{ category }}</p>
         <p>{{ name }}</p>
       </div>
     </NuxtLink>

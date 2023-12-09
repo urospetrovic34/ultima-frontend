@@ -1,6 +1,6 @@
 <template>
-  <div v-if="status === 'success'" className="flex flex-col">
-    <div className="grid grid-cols-3 gap-4 mb-5">
+  <div v-if="status === 'success'" class="flex flex-col">
+    <div class="grid grid-cols-3 gap-4 mb-5">
       <div v-for="item in products">
         <ProductCard
           :slug="item.slug"
