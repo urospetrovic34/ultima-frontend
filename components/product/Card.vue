@@ -1,15 +1,14 @@
 <template>
-  <div class="flex flex-col cursor-pointer w-[300px]">
+  <div class="flex flex-col cursor-pointer">
     <NuxtLink :to="url">
       <div class="overflow-hidden">
         <NuxtImg
           :src="image"
           format="webp"
-          fit="cover"
-          height="300"
           width="300"
-          sizes="50vw sm:25vw"
-          class="object-cover h-[300px] hover:scale-105 transition-[transform] duration-500"
+          height="300"
+          sizes="100vw sm:50vw md:100px"
+          className="hover:scale-105 transition-[transform] duration-500"
         />
       </div>
       <div class="bg-primary p-3">

@@ -18,7 +18,10 @@ export default defineNuxtConfig({
   },
   image: {
     format: ["webp"],
-    domains: ["https/lxlaycyqekumxskkhfup.supabase.co"],
+    provider: "storyblok",
+    storyblok: {
+      baseURL: "https://a.storyblok.com",
+    },
   },
   modules: [
     "@pinia/nuxt",

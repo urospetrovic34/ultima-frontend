@@ -2,7 +2,7 @@
   <nav class="bg-secondary border-b border-primary">
     <div class="max-w-screen-xl flex items-center justify-between py-5 mx-auto">
       <div class="leading-5">
-        <NuxtLink class="hover:bg-primary py-5 px-3 cursor-pointer" to="/"
+        <NuxtLink class="hover:bg-primary py-5 px-3 cursor-pointer" to="/shop"
           >Fabric
         </NuxtLink>
       </div>
