@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-accent">
+  <footer class="bg-primary">
     <div class="w-full mx-auto max-w-screen-xl flex justify-between py-6">
       <div class="flex flex-col justify-between">
         <div

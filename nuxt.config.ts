@@ -1,5 +1,11 @@
 export default defineNuxtConfig({
-  devtools: { enabled: true },
+  devtools: { enabled: false },
+  runtimeConfig: {
+    public: {
+      API_KEY: process.env.API_KEY,
+      API_URL: process.env.API_URL,
+    },
+  },
   css: ["~/assets/css/main.scss"],
   postcss: {
     plugins: {
@@ -7,7 +13,16 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: ["@pinia/nuxt", "@pinia-plugin-persistedstate/nuxt", "@vueuse/nuxt"],
+  image: {
+    format: ["webp"],
+    domains: ["https/lxlaycyqekumxskkhfup.supabase.co"],
+  },
+  modules: [
+    "@pinia/nuxt",
+    "@pinia-plugin-persistedstate/nuxt",
+    "@vueuse/nuxt",
+    "@nuxt/image",
+  ],
   imports: {
     dirs: ["stores"],
   },
