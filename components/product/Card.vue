@@ -9,7 +9,7 @@
           className="object-cover h-[300px] hover:scale-105 transition-[transform] duration-500"
         />
       </div>
-      <div className="bg-primary p-3">
+      <div className="bg-primary p-4">
         <p className="capitalize text-lg">{{ category }}</p>
         <p>{{ name }}</p>
       </div>
