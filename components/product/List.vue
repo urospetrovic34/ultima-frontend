@@ -1,7 +1,13 @@
 <template>
-  <div v-if="status === 'success'" class="flex flex-col">
+  <div
+    v-if="status === 'success'"
+    class="flex flex-col"
+  >
     <div class="grid grid-cols-3 gap-4 mb-5">
-      <div v-for="item in products">
+      <div
+        v-for="item in products"
+        :key="item.id"
+      >
         <ProductCard
           :slug="item.slug"
           :image="item.image"

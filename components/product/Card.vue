@@ -7,13 +7,15 @@
           format="webp"
           width="300"
           height="300"
-          sizes="sm:150px, md:300px" 
+          sizes="sm:150px, md:300px"
           densities="1x 2x"
-          className="hover:scale-105 transition-[transform] duration-500"
+          class="hover:scale-105 transition-[transform] duration-500"
         />
       </div>
       <div class="bg-primary p-3">
-        <p class="capitalize text-lg">{{ category }}</p>
+        <p class="capitalize text-lg">
+          {{ category }}
+        </p>
         <p>{{ name }}</p>
       </div>
     </NuxtLink>
@@ -40,5 +42,5 @@ const props = defineProps({
   },
 });
 const { image, category, name, slug } = props;
-let url = `/${category}/${slug}`;
+const url = `/${category}/${slug}`;
 </script>

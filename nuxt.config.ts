@@ -28,6 +28,8 @@ export default defineNuxtConfig({
     "@pinia-plugin-persistedstate/nuxt",
     "@vueuse/nuxt",
     "@nuxt/image",
+    "@nuxt/content",
+    "@nuxtjs/eslint-module",
   ],
   imports: {
     dirs: ["stores"],
