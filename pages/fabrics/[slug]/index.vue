@@ -22,17 +22,5 @@ type ProductReponse = {
     name: string;
   };
 };
-const route = useRoute();
-const config = useRuntimeConfig();
-const { data: product } = await useFetch<Array<ProductReponse>>(
-  `${config.public.API_URL}/rest/v1/product?slug=eq.${route.params.slug}&select=*,product_category(name)`,
-  {
-    method: "GET",
-    headers: {
-      Authorization: `Bearer ${config.public.API_KEY}`,
-      apiKey: config.public.API_KEY,
-    },
-    key: "product",
-  }
-);
+const { data: product } = await useFetch<Array<ProductReponse>>("/api/product");
 </script>
