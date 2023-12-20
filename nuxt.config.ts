@@ -7,7 +7,8 @@ export default defineNuxtConfig({
     },
   },
   routeRules: {
-    "/": { swr: 1800 },
+    "/shop/**": { swr: 1800 },
+    "/fabrics/**": { swr: 3600 },
   },
   css: ["~/assets/css/main.scss"],
   postcss: {
