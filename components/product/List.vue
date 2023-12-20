@@ -1,19 +1,21 @@
 <template>
-  <div
-    v-if="status === 'success'"
-    class="flex flex-col"
-  >
-    <div class="grid grid-cols-3 gap-4 mb-5">
-      <div
-        v-for="item in products"
-        :key="item.id"
-      >
-        <ProductCard
-          :slug="item.slug"
-          :image="item.image"
-          :name="item.name"
-          :category="item.product_category.name"
-        />
+  <div class="flex justify-center items-center my-20">
+    <div
+      v-if="status === 'success'"
+      class="flex flex-col"
+    >
+      <div class="grid grid-cols-3 gap-4 mb-5">
+        <div
+          v-for="item in products"
+          :key="item.id"
+        >
+          <ProductCard
+            :slug="item.slug"
+            :image="item.image"
+            :name="item.name"
+            :category="item.product_category.name"
+          />
+        </div>
       </div>
     </div>
   </div>
