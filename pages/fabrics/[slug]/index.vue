@@ -22,5 +22,8 @@ type ProductReponse = {
     name: string;
   };
 };
-const { data: product } = await useFetch<Array<ProductReponse>>("/api/product");
+const route = useRoute();
+const { data: product } = await useFetch<Array<ProductReponse>>(
+  `/api/product/${route.params.slug}`
+);
 </script>
