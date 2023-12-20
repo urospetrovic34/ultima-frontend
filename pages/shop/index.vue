@@ -20,17 +20,7 @@ type ProductReponse = {
     name: string;
   };
 };
-const config = useRuntimeConfig();
 const { data: products, status } = await useFetch<Array<ProductReponse>>(
-  `${config.public.API_URL}/rest/v1/product?select=*,product_category(name)`,
-  {
-    headers: {
-      Prefer: "count=exact",
-      Authorization: `Bearer ${config.public.API_KEY}`,
-      apiKey: config.public.API_KEY,
-      Range: usePagination(),
-    },
-    key: "products",
-  }
+  `/api/products`
 );
 </script>
