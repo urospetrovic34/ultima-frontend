@@ -11,15 +11,16 @@
     </NuxtLink>
     <template
       v-for="(item, index) in Array(count)"
-      :key="index"
+      :key="index + 1"
     >
       <NuxtLink
         class="w-[40px] h-[40px]"
-        :to="{path: '/shop', query: {page: index + 1}}"
+        :to="{ path: '/shop', query: { page: index + 1 } }"
       >
         <ReusableButton
           :text="(index + 1).toString()"
           :rounded="true"
+          @click="$emit('change-product-page', index + 1)"
         />
       </NuxtLink>
     </template>
@@ -40,4 +41,5 @@ type PaginationProps = {
   count: number;
 };
 defineProps<PaginationProps>();
+defineEmits(['change-product-page'])
 </script>

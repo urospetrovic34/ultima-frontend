@@ -3,7 +3,10 @@
     <div class="flex justify-center items-center my-20">
       <div class="flex flex-col">
         <ProductList :products="products || []" />
-        <ReusablePagination :count="Math.ceil(total / 9)" />
+        <ReusablePagination
+          :count="Math.ceil(total / 9)"
+          @change-product-page="changeProductPage"
+        />
       </div>
     </div>
   </div>
@@ -31,15 +34,23 @@ type ApiResponse = {
     page: number;
   };
 };
-const route = useRoute();
-const page = Number(route.query.page) ?? 1;
-const { data, status } = await useFetch<ApiResponse>(
-  `/api/products?page=${page}`,
-  {
-    query: { page: page },
-    watch: [useRoute().query],
-  }
-);
+const { query } = useRoute();
+const page = ref(Number(query.page) ?? 1);
+const { data, status, refresh } = await useFetch<ApiResponse>("/api/products", {
+  query: {
+    page: `${page.value}`,
+  },
+  key: `products-page-${page.value}`,
+  watch: [
+    () => page.value,
+    () => {
+      refresh();
+    },
+  ],
+});
 const products = data.value?.products;
 const total = data.value?.pagination.total || 0;
+const changeProductPage = (pageNumber: number) => {
+  page.value = pageNumber;
+};
 </script>
