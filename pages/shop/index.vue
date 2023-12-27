@@ -1,12 +1,20 @@
 <template>
-  <div v-if="status === 'success'">
+  <div>
     <div class="flex justify-center items-center my-20">
       <div class="flex flex-col">
-        <ProductList :products="data?.products || []" />
-        <ReusablePagination
-          :count="Math.ceil(data?.pagination.total / 9)"
-          @change-product-page="changeProductPage"
-        />
+        <div
+          v-if="pending"
+          class="items-center justify-center"
+        >
+          <ReusableLoader />
+        </div>
+        <div v-if="status === 'success'">
+          <ProductList :products="data?.products || []" />
+          <ReusablePagination
+            :count="data?.paginationCount || 0"
+            @change-product-page="changeProductsPage"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -29,24 +37,20 @@ type Product = {
 };
 type ApiResponse = {
   products: Array<Product>;
-  pagination: {
-    total: number;
-    page: number;
-  };
+  paginationCount: number;
 };
 const { query } = useRoute();
-function changeProductPage(pageNumber: number) {
+function changeProductsPage(pageNumber: number) {
   page.value = pageNumber;
 }
 const page = ref(query.page ? Number(query.page) : 1);
-const { data, status } = await useAsyncData<ApiResponse>(
-  `products-page-${page.value}`,
+const { data, status, pending } = await useAsyncData<ApiResponse>(
+  `products`,
   () =>
     $fetch("/api/products", {
       query: {
         page: page.value,
       },
-      key: `products-page-${page.value}`,
     }),
   { watch: [page] }
 );

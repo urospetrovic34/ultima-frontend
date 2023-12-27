@@ -22,9 +22,6 @@ export default defineEventHandler(async (event) => {
 
   return {
     products: res._data,
-    pagination: {
-      total: Number(range?.split("/")[1]),
-      page: Number(range?.split("-")[0]),
-    },
+    paginationCount: Math.ceil(Number(range?.split("/")[1]) / 9)
   };
 });
