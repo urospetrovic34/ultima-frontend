@@ -35,9 +35,9 @@ type ApiResponse = {
   };
 };
 const { query } = useRoute();
-const page = ref(Number(query.page) ?? 1);
+const page = ref(query.page ? Number(query.page) : 1);
 const { data, status, refresh } = await useFetch<ApiResponse>("/api/products", {
-  query: {
+  params: {
     page: `${page.value}`,
   },
   key: `products-page-${page.value}`,
