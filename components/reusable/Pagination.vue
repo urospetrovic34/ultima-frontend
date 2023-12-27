@@ -41,5 +41,5 @@ type PaginationProps = {
   count: number;
 };
 defineProps<PaginationProps>();
-defineEmits(['change-product-page'])
+defineEmits(["change-product-page"]);
 </script>
