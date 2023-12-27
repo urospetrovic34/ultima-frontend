@@ -1,8 +1,8 @@
 <template>
   <ProductDetail
-    :image="product[0].image"
-    :name="product[0].name"
-    :price="product[0].price"
+    :image="product?.image || ''"
+    :name="product?.name || ''"
+    :price="product?.price || 0"
   />
 </template>
 
@@ -23,7 +23,7 @@ type ProductReponse = {
   };
 };
 const route = useRoute();
-const { data: product } = await useFetch<Array<ProductReponse>>(
+const { data: product } = await useFetch<ProductReponse>(
   `/api/product/${route.params.slug}`
 );
 </script>

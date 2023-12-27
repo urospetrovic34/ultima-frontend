@@ -1,10 +1,8 @@
-export function usePagination() {
-  const route = useRoute();
-  if (route.query.page) {
-    const startIndex = (Number(route.query.page) - 1) * 9;
-    const lastIndex = startIndex + 8;
-    return `${startIndex}-${lastIndex}`;
-  } else {
+export function usePagination(page: string) {
+  if (!page) {
     return "0-8";
   }
+  const startIndex = (Number(page) - 1) * 9;
+  const lastIndex = startIndex + 8;
+  return `${startIndex}-${lastIndex}`;
 }

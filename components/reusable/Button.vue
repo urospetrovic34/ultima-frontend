@@ -20,10 +20,9 @@ type ButtonProps = {
   type?: HTMLButtonElement["type"];
   rounded?: boolean;
 };
-const props = withDefaults(defineProps<ButtonProps>(), {
+withDefaults(defineProps<ButtonProps>(), {
   type: "button",
   text: "Button",
   rounded: false,
 });
-const { type, text, rounded } = props;
 </script>

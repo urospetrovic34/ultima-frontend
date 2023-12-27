@@ -1,12 +1,16 @@
 <template>
-  <ProductList
-    :products="products || []"
-    :status="status"
-  />
+  <div v-if="status === 'success'">
+    <div class="flex justify-center items-center my-20">
+      <div class="flex flex-col">
+        <ProductList :products="products || []" />
+        <ReusablePagination :count="Math.ceil(total / 9)" />
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
-type ProductReponse = {
+type Product = {
   id: number;
   created_at: string;
   category_id: number;
@@ -20,7 +24,22 @@ type ProductReponse = {
     name: string;
   };
 };
-const { data: products, status } = await useFetch<Array<ProductReponse>>(
-  `/api/products`
+type ApiResponse = {
+  products: Array<Product>;
+  pagination: {
+    total: number;
+    page: number;
+  };
+};
+const route = useRoute();
+const page = Number(route.query.page) ?? 1;
+const { data, status } = await useFetch<ApiResponse>(
+  `/api/products?page=${page}`,
+  {
+    query: { page: page },
+    watch: [useRoute().query],
+  }
 );
+const products = data.value?.products;
+const total = data.value?.pagination.total || 0;
 </script>

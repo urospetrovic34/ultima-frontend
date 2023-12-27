@@ -16,7 +16,7 @@
 </template>
 
 <script setup lang="ts">
-const props = defineProps({
+defineProps({
   image: {
     type: String,
     required: true,
@@ -30,5 +30,4 @@ const props = defineProps({
     required: true,
   },
 });
-const { image } = props;
 </script>

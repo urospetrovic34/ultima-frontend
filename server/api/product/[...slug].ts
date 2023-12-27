@@ -2,7 +2,23 @@ export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig(event);
   const slug = getRouterParam(event, "slug");
 
-  const data = await $fetch(
+  type Product = {
+    [key: string]: any;
+    id: number;
+    created_at: string;
+    category_id: number;
+    name: string;
+    description: string;
+    image: string;
+    price: number;
+    stock: number;
+    slug: string;
+    product_category: {
+      name: string;
+    };
+  };
+
+  const res = await $fetch(
     `${config.public.API_URL}/rest/v1/product?slug=eq.${slug}&select=*,product_category(name)`,
     {
       method: "GET",
@@ -14,5 +30,8 @@ export default defineEventHandler(async (event) => {
     }
   );
 
-  return data;
+  const data = res as Array<Product>;
+  const product = data[0];
+
+  return product;
 });

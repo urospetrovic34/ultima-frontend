@@ -1,28 +1,21 @@
 <template>
-  <div class="flex justify-center items-center my-20">
+  <div class="grid grid-cols-3 gap-4 mb-5">
     <div
-      v-if="status === 'success'"
-      class="flex flex-col"
+      v-for="item in products"
+      :key="item.id"
     >
-      <div class="grid grid-cols-3 gap-4 mb-5">
-        <div
-          v-for="item in products"
-          :key="item.id"
-        >
-          <ProductCard
-            :slug="item.slug"
-            :image="item.image"
-            :name="item.name"
-            :category="item.product_category.name"
-          />
-        </div>
-      </div>
+      <ProductCard
+        :slug="item.slug"
+        :image="item.image"
+        :name="item.name"
+        :category="item.product_category.name"
+      />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-type ProductReponse = {
+type Product = {
   id: number;
   created_at: string;
   category_id: number;
@@ -36,15 +29,8 @@ type ProductReponse = {
     name: string;
   };
 };
-const props = defineProps({
-  products: {
-    type: Array<ProductReponse>,
-    required: true,
-  },
-  status: {
-    type: String,
-    required: true,
-  },
-});
-const { products, status } = props;
+type ListProps = {
+  products: Array<Product>;
+};
+defineProps<ListProps>();
 </script>

@@ -41,6 +41,6 @@ const props = defineProps({
     required: true,
   },
 });
-const { image, category, name, slug } = props;
+const { category, slug } = props;
 const url = `/${category}/${slug}`;
 </script>

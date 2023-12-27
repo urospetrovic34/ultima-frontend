@@ -23,7 +23,7 @@
 </template>
 
 <script setup lang="ts">
-const props = defineProps({
+defineProps({
   name: {
     type: String,
     required: true,
@@ -33,5 +33,4 @@ const props = defineProps({
     required: true,
   },
 });
-const { name, price } = props;
 </script>

@@ -20,12 +20,11 @@ type InputProps = {
   disabled?: boolean;
   value?: string;
 };
-const props = withDefaults(defineProps<InputProps>(), {
+withDefaults(defineProps<InputProps>(), {
   placeholder: "",
   required: false,
   type: "text",
   disabled: false,
   value: "",
 });
-const { placeholder, required, type, disabled, value } = props;
 </script>
