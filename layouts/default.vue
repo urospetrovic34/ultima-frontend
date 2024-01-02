@@ -3,9 +3,9 @@
     <NavigationHeaderAuthCart />
     <NavigationHeaderPrimary />
     <NavigationHeaderSecondary />
-    <div class="max-w-screen-xl w-full mx-auto flex-1">
+    <main class="max-w-screen-xl w-full mx-auto flex flex-col flex-1">
       <slot />
-    </div>
+    </main>
     <NavigationFooter />
   </div>
 </template>
